@@ -18,5 +18,25 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
-explore: lg_well_data_07_03_23_for_calc {}
+
+explore: from_polygon {
+  # join: lg_well_production_data_07_03_23_clustered {
+  #   type: left_outer
+  #   sql_on: ${from_polygon.api_10} = ${lg_well_production_data_07_03_23_clustered.api_10} ;;
+  #   relationship: one_to_many
+  # }
+
+  from: lg_well_data_07_03_23_for_calc
+    fields:
+      #[custom_geo_intersection, api_10, user_defined_polygon, sh_lon_wsg84, sh_lat_wsg84, bh_lon_wsg84, bh_lat_wsg84]
+      [ALL_FIELDS*]
+    always_filter: {
+    filters: [custom_geo_intersection: "1"]
+    }
+    join: lg_well_production_data_07_03_23_clustered {
+      type: left_outer
+      sql_on: ${from_polygon.api_10} = ${lg_well_production_data_07_03_23_clustered.api_10} ;;
+      relationship: one_to_many
+    }
+}
 explore: lg_well_production_data_07_03_23_clustered {}

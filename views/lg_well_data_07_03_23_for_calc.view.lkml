@@ -228,4 +228,15 @@ view: lg_well_data_07_03_23_for_calc {
     type: count_distinct
     sql: ${operator_name} ;;
   }
+  dimension: custom_geo_intersection {
+    type: number
+    sql:CASE
+      WHEN ST_INTERSECTS(
+        ST_MAKELINE(ST_GEOGPOINT(${sh_lon_wsg84}, ${sh_lat_wsg84}), ST_GEOGPOINT(${bh_lon_wsg84}, ${bh_lat_wsg84})),
+        ST_GEOGFROMTEXT({{_user_attributes['polygon_string']}})
+      )THEN 1
+      ELSE 0
+    END;;
+  }
+
 }
