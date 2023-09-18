@@ -4,6 +4,8 @@ view: sql_runner_query {
       ;;
   }
 
+  # api_10 and prod_date should be in the PK
+
   measure: count {
     type: count
     drill_fields: [detail*]
