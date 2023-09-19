@@ -5,6 +5,10 @@ view: lg_well_production_data_07_03_23_clustered {
     type: string
     sql: ${TABLE}.api_10 ;;
   }
+  dimension: api_10_int64 {
+    type: number
+    sql: CAST(${TABLE}.api_10 AS INT64) ;;
+  }
   dimension: gas_mcf {
     type: number
     sql: ${TABLE}.Gas_MCF ;;
@@ -26,7 +30,7 @@ view: lg_well_production_data_07_03_23_clustered {
   }
   dimension: primary_key {
     primary_key: yes
-    sql: CONCAT(${TABLE}.api_10, ${TABLE}.month) ;;
+    sql: CONCAT(${api_10_int64}, ${TABLE}.month) ;;
   }
   measure: count {
     type: count
@@ -45,5 +49,8 @@ view: lg_well_production_data_07_03_23_clustered {
     type: sum_distinct
     sql_distinct_key: ${primary_key} ;;
     sql: ${water_bbl} ;;
+  }
+  set: production_set {
+    fields: [api_10_int64, month_raw, oil_bbl, gas_mcf, water_bbl]
   }
 }

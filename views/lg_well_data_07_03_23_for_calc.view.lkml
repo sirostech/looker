@@ -238,5 +238,8 @@ view: lg_well_data_07_03_23_for_calc {
       ELSE 0
     END;;
   }
+  set: polygon_set {
+    fields: [api_10, formations, pv_basin]
+  }
 
 }
