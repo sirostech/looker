@@ -124,7 +124,7 @@ view: lg_well_data_07_03_23_for_calc {
   }
   dimension_group: lg_est_prod_start {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
+    timeframes: [raw, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.lg_est_prod_start ;;
@@ -151,7 +151,7 @@ view: lg_well_data_07_03_23_for_calc {
   }
   dimension_group: prod_start {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
+    timeframes: [raw, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.prod_start ;;
@@ -217,13 +217,14 @@ view: lg_well_data_07_03_23_for_calc {
     sql: ${TABLE}.wtr_cumulative_bbl ;;
   }
   measure: count {
-    type: count
+    type: count_distinct
+    sql: ${api_10} ;;
     drill_fields: [lease_name, county_name, operator_name]
   }
-  measure: api_list {
-    type: list
-    list_field: api_10
-  }
+  # measure: api_list {
+  #   type: list
+  #   list_field: api_10
+  # }
   measure: operator_aggregation {
     type: count_distinct
     sql: ${operator_name} ;;

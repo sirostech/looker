@@ -1,6 +1,10 @@
 view: lg_well_production_data_07_03_23_clustered {
   sql_table_name: `siros-tech.lg_well_data.lg_well_production_data_07_03_23_clustered` ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: CONCAT(${api_10_int64}, ${month_raw}) ;;
+  }
   dimension: api_10 {
     type: string
     sql: ${TABLE}.api_10 ;;
@@ -27,10 +31,6 @@ view: lg_well_production_data_07_03_23_clustered {
   dimension: water_bbl {
     type: number
     sql: ${TABLE}.Water_BBL ;;
-  }
-  dimension: primary_key {
-    primary_key: yes
-    sql: CONCAT(${api_10_int64}, ${TABLE}.month) ;;
   }
   measure: count {
     type: count
