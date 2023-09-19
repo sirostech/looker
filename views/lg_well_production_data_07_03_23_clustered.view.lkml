@@ -15,7 +15,7 @@ view: lg_well_production_data_07_03_23_clustered {
   }
   dimension_group: month {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
+    timeframes: [raw, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.month ;;
