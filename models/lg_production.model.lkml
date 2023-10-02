@@ -1,5 +1,5 @@
 connection: "looker-big-query"
-
+include: "/explores/well_production_data.lkml"
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
@@ -19,11 +19,11 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 #   }
 # }
 
-explore: lg_well_data_07_03_23_for_calc {
-  join: lg_well_production_data_07_03_23_clustered {
-    type: left_outer
-    sql_on: ${lg_well_data_07_03_23_for_calc.api_10} = ${lg_well_production_data_07_03_23_clustered.api_10_int64} ;;
-    relationship: one_to_many
-  }
-}
+# explore: lg_well_data_07_03_23_for_calc {
+#   join: lg_well_production_data_07_03_23_clustered {
+#     type: left_outer
+#     sql_on: ${lg_well_data_07_03_23_for_calc.api_10} = ${lg_well_production_data_07_03_23_clustered.api_10_int64} ;;
+#     relationship: one_to_many
+#   }
+# }
 explore: lg_well_production_data_07_03_23_clustered {}
