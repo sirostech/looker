@@ -17,6 +17,7 @@ view: lg_well_production_data_07_03_23_clustered {
     sql: CONCAT(${api_10_int64}, ${TABLE}.month) ;;
   }
 
+
   dimension: api_10 {
     type: string
     sql: ${TABLE}.api_10 ;;
