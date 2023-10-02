@@ -1,10 +1,13 @@
 view: lg_well_data_07_03_23_for_calc {
+
   sql_table_name: `siros-tech.lg_well_data.lg_well_data_07_03_23_for_calc` ;;
+  view_label: "Wells and Locations"
 
   dimension: api_10 {
     primary_key: yes
     type: number
     sql: ${TABLE}.api_10 ;;
+    value_format_name: id
   }
   dimension: bfit_net {
     type: number

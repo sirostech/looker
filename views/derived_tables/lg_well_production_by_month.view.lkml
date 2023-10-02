@@ -1,5 +1,9 @@
 ####################################################################
 # Create aggregated table with a unique api_10 and month combination
+#
+# Eric Bevan - 10/2/23
+# THIS VIEW IS NOT BEING USED BECAUSE OF UNIQUENESS OF SOURCE RECORDS
+# NEEDED TO BE ADJUSTED FOR IN THE BASE LOOKER VIEW
 ####################################################################
 
 include: "/views/lg_well_production_data_07_03_23_clustered.view.lkml"
