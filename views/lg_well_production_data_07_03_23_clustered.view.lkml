@@ -40,7 +40,7 @@ view: lg_well_production_data_07_03_23_clustered {
   }
   dimension: gas_mcf_monthly_sum {
     type: number
-    sql: ${TABLE}.Gas_MCF_Monthly_Sum ;;
+    sql: ${TABLE}.Gas_MCF;;
   }
   dimension_group: production {
     type: time
@@ -51,11 +51,11 @@ view: lg_well_production_data_07_03_23_clustered {
   }
   dimension: oil_bbl_monthly_sum {
     type: number
-    sql: ${TABLE}.Oil_BBL_Monthly_Sum ;;
+    sql: ${TABLE}.Oil_BBL ;;
   }
   dimension: water_bbl_monthly_sum {
     type: number
-    sql: ${TABLE}.Water_BBL_Monthly_Sum ;;
+    sql: ${TABLE}.Water_BBL ;;
   }
 
   measure: count {
