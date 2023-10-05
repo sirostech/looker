@@ -10,14 +10,14 @@ view: lg_well_production_data_07_03_23_clustered {
 
   ## Persisting this derived table via the datagroup requires configuration of the temporary schema (dataset) in the Big Query connection.
   ## Once in effect, this will store derived table results in Big Query to reduce run-time and overall costs
-  # datagroup_trigger: siros_demo
+  datagroup_trigger: siros_demo
 
   sql:
      SELECT  api_10,
              month,
-             SUM(Oil_BBL) as Oil_BBL_Monthly_Sum,
-             SUM(Gas_MCF) as Gas_MCF_Monthly_Sum,
-             SUM(Water_BBL) as Water_BBL_Monthly_Sum
+             SUM(Oil_BBL) as oil_bbl,
+             SUM(Gas_MCF) as gas_mcf,
+             SUM(Water_BBL) as water_bbl
        FROM  `siros-tech.lg_well_data.lg_well_production_data_07_03_23_clustered`
    GROUP BY  api_10,
              month ;;
