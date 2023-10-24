@@ -49,6 +49,20 @@ view: lg_well_production_data_07_03_23_clustered {
     datatype: date
     sql: ${TABLE}.month ;;
   }
+  # dimension: production_duration {
+  #   type: string
+  #   label_from_parameter: parameters.production_duration_param
+  #   sql:{% if parameters.production_duration_param._parameter_value == "'Month'" %}
+  #   ${production_month}
+  #   {% elsif parameters.production_duration_param._parameter_value == "'Quarter'" %}
+  #   ${ production_quarter}
+  #   {% elsif parameters.production_duration_param._parameter_value == "'Year'" %}
+  #   ${ production_year}
+  #   {% else %}
+  #   Null
+  #   {% endif %};;
+  # }
+
   dimension: oil_bbl_monthly_sum {
     type: number
     sql: ${TABLE}.Oil_BBL ;;
