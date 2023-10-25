@@ -1,8 +1,9 @@
 view: parameters {
 
-  parameter:  production_duration_param{
+  parameter: production_duration_param {
     type: string
-    description: "Filter to specify the prferred duration for well production: Monthly, Quarterly, or Yearly"
+    label: "Production Duration"
+    description: "Filter to specify the preferred duration for well production: Monthly, Quarterly, or Yearly"
 
     allowed_value: {
       label: "Monthly"

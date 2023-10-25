@@ -1,10 +1,10 @@
 ---
-- dashboard: from_polygon__line_chart
-  title: From Polygon - Line chart
+- dashboard: from_polygon__parameters
+  title: From Polygon - Parameters
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 3jM4Ifcb1SOJGcHAJanCv3
+  preferred_slug: pz9w8KRgJzuZhfbfzKwnze
   elements:
   - title: Monthly Well Production
     name: Monthly Well Production
@@ -12,11 +12,12 @@
     explore: lg_well_data_07_03_23_for_calc
     type: looker_line
     fields: [lg_well_production_data_07_03_23_clustered.water_production_total, lg_well_production_data_07_03_23_clustered.oil_production_total,
-      lg_well_production_data_07_03_23_clustered.gas_production_total, lg_well_production_data_07_03_23_clustered.production_month]
-    fill_fields: [lg_well_production_data_07_03_23_clustered.production_month]
+      lg_well_production_data_07_03_23_clustered.gas_production_total, lg_well_production_data_07_03_23_clustered.production_duration]
     filters:
       lg_well_data_07_03_23_for_calc.custom_geo_intersection: '1'
-    sorts: [lg_well_production_data_07_03_23_clustered.production_month]
+      lg_well_production_data_07_03_23_clustered.production_duration_param: Month
+      lg_well_production_data_07_03_23_clustered.production_duration: "-NULL"
+    sorts: [lg_well_production_data_07_03_23_clustered.production_duration]
     limit: 1000
     column_limit: 50
     x_axis_gridlines: false
@@ -41,7 +42,7 @@
     label_density: 25
     x_axis_scale: auto
     y_axis_combined: true
-    show_null_points: true
+    show_null_points: false
     interpolation: linear
     y_axes: [{label: '', orientation: left, series: [{axisId: lg_well_production_data_07_03_23_clustered.water_production_total,
             id: lg_well_production_data_07_03_23_clustered.water_production_total,

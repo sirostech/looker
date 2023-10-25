@@ -1,7 +1,7 @@
 connection: "looker-big-query"
 
 include: "/dashboards/monthly_well_production.dashboard.lookml"   # include a LookML dashboard called my_dashboard
-
+include: "/views/parameters/parameters.view.lkml"
 include: "/explores/lg_well_production_data.lkml"
 # include: "/explores/well_production_data.lkml"
 
@@ -15,4 +15,5 @@ datagroup: siros_demo {
 }
 
 
-explore: lg_well_production_data_07_03_23_clustered {}
+explore: lg_well_production_data_07_03_23_clustered {
+}
