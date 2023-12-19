@@ -95,7 +95,25 @@ view: lg_well_production_data_07_03_23_clustered {
     sql: ${water_bbl_monthly_sum} ;;
     drill_fields: [production_month, api_10_int64, water_bbl_monthly_sum]
   }
+  measure: oil_production_cumulative  {
+    type: running_total
+    sql_distinct_key: ${primary_key} ;;
+    sql: ${oil_bbl_monthly_sum} ;;
+    drill_fields: [production_month, api_10_int64, oil_bbl_monthly_sum]
+  }
+  measure: gas_production_cumulative  {
+    type: running_total
+    sql_distinct_key: ${primary_key} ;;
+    sql: ${gas_mcf_monthly_sum} ;;
+    drill_fields: [production_month, api_10_int64, gas_mcf_monthly_sum]
+  }
+  measure: water_production_cumulative {
+    type: running_total
+    sql: ${water_bbl_monthly_sum} ;;
+    sql_distinct_key: ${primary_key} ;;
+    drill_fields: [production_month, api_10_int64, water_bbl_monthly_sum]
+  }
+
   set: production_set {
     fields: [api_10_int64, production_month, oil_bbl_monthly_sum, gas_mcf_monthly_sum, water_bbl_monthly_sum, oil_production_total, gas_production_total, water_production_total]
-  }
-}
+  }}
