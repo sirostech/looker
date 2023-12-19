@@ -380,3 +380,5 @@
     col: 17
     width: 6
     height: 5
+  embed_style:
+    background_color: "#1f2024"
