@@ -5,6 +5,11 @@
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: pz9w8KRgJzuZhfbfzKwnze
+  embed_style:
+    background_color: "#1f2024"
+    title_color: "#00ccf2"
+    tile_background_color: "#1f2024"
+    tile_text_color: "#00ccf2"
   elements:
   - title: Monthly Well Production
     name: Monthly Well Production
@@ -380,5 +385,3 @@
     col: 17
     width: 6
     height: 5
-  embed_style:
-    background_color: "#1f2024"

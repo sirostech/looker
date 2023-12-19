@@ -1,6 +1,7 @@
 connection: "looker-big-query"
 
 include: "/dashboards/monthly_well_production.dashboard.lookml"   # include a LookML dashboard called my_dashboard
+include: "/dashboards/from_polygon_front_end.dashboard.lookml"
 include: "/views/parameters/parameters.view.lkml"
 include: "/explores/lg_well_production_data.lkml"
 # include: "/explores/well_production_data.lkml"
