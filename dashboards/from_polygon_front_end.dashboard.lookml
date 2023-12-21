@@ -248,6 +248,7 @@
       lg_well_production_data_07_03_23_clustered.oil_production_total, lg_well_production_data_07_03_23_clustered.water_production_total]
     filters:
       lg_well_data_07_03_23_for_calc.custom_geo_intersection: '1'
+      lg_well_production_data_07_03_23_clustered.production_year: after 5 years ago
     sorts: [lg_well_production_data_07_03_23_clustered.production_month]
     limit: 500
     column_limit: 50
@@ -259,6 +260,13 @@
       type: sum
       _kind_hint: measure
       _type_hint: number
+      __PARAMETER_LINE_NUMS:
+        based_on: 256
+        expression: 257
+        label: 258
+        type: 259
+        _kind_hint: 260
+        _type_hint: 261
     - args:
       - lg_well_production_data_07_03_23_clustered.gas_production_total
       calculation_type: running_total
@@ -315,7 +323,7 @@
     point_style: none
     show_value_labels: false
     label_density: 25
-    x_axis_scale: auto
+    x_axis_scale: time
     y_axis_combined: true
     ordering: none
     show_null_labels: false
@@ -327,13 +335,16 @@
       palette_id: looker_classic
       options:
         steps: 5
+        __FILE: siros-bytecode/dashboards/from_polygon_front_end.dashboard.lookml
+        __LINE_NUM: 329
     y_axes: [{label: '', orientation: left, series: [{axisId: running_total_of_well_production_gas_production_total,
-            id: running_total_of_well_production_gas_production_total, name: Gas Cumulative},
-          {axisId: running_total_of_well_production_oil_production_total, id: running_total_of_well_production_oil_production_total,
-            name: Oil Cumulative}, {axisId: running_total_of_well_production_water_production_total,
+            id: running_total_of_well_production_gas_production_total, name: Gas Cumulative
+              Mcf}, {axisId: running_total_of_well_production_oil_production_total,
+            id: running_total_of_well_production_oil_production_total, name: Oil Cumulative
+              Bbl}, {axisId: running_total_of_well_production_water_production_total,
             id: running_total_of_well_production_water_production_total, name: Water
-              Cumulative}], showLabels: true, showValues: true, unpinAxis: false,
-        tickDensity: default, tickDensityCustom: 5, type: linear}]
+              Cumulative Bbl}], showLabels: true, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: log}]
     x_axis_zoom: true
     y_axis_zoom: true
     series_colors:
@@ -344,6 +355,11 @@
       running_total_of_well_production_gas_production_total: Gas Cumulative Mcf
       running_total_of_well_production_oil_production_total: Oil Cumulative Bbl
       running_total_of_well_production_water_production_total: Water Cumulative Bbl
+    trend_lines: [{color: "#1f3e5a", label_position: right, order: 3, period: 6, regression_type: average,
+        series_index: 1, show_label: false}, {color: "#ed6168", label_position: right,
+        order: 3, period: 6, regression_type: average, series_index: 2, show_label: false},
+      {color: "#9fdee0", label_position: right, order: 3, period: 6, regression_type: average,
+        series_index: 3, show_label: false}]
     show_null_points: true
     interpolation: linear
     hidden_pivots: {}
