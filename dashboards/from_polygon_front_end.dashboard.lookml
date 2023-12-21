@@ -99,6 +99,11 @@
     col: 17
     width: 6
     height: 4
+    style:
+      background_color: "#1f2024"
+      title_color: "#00ccf2"
+      tile_background_color: "#1f2024"
+      tile_text_color: "#00ccf2"
   - title: Operator Distribution by PV Status
     name: Operator Distribution by PV Status
     model: lg_production
